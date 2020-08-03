@@ -21,7 +21,6 @@ function generatePassword() {
   // return 'letters' according to answer=
   if (caseYN) {
     var passwordContents = lettersUC.concat(lettersLC);
-    // console.log(letters);
   } else {
     var passwordContents = lettersLC;
     // console.log(letters);
@@ -29,24 +28,28 @@ function generatePassword() {
   
   // symbols?
   let symbolYN = confirm("Would you like to include symbols? (@%+/'!#$^:?,-_.)");
-  // return symbols if Y
   if (symbolYN) {
     var passwordContents = passwordContents.concat(symbols);
-    // console.log(symbolY);
   }
-  
   
   // numbers?
   let numbersYN = confirm('Would you like to include numbers?');
   if (numbersYN) {
     var passwordContents = passwordContents.concat(numbers);
-    // console.log(symbolY);
   }
   console.log(passwordContents);
   
+
   // CREATE THE PASSWORD
-  for (n = 0; n > characterLength.length; n++);
-  return characterLength[n];
+  for (let n = 0; n > characterLength; n++) {
+    function randomItem() {
+      var passwordContents = passwordContents[Math.floor(Math.random() * passwordContents.length)];
+    }
+    // var randomItem = passwordContents[Math.floor(Math.random() * passwordContents.length)];
+  }
+  
+  return (passwordContents);
+  
 }
 
 
