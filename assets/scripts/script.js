@@ -43,7 +43,7 @@ var password;
   // CREATE THE PASSWORD
   for (let n = 0; n > characterLength; n++) {
     function randomItem() {
-      var password += passwordContents[Math.floor(Math.random() * passwordContents.length)];
+      password += passwordContents[Math.floor(Math.random() * passwordContents.length)];
     }
     // var randomItem = passwordContents[Math.floor(Math.random() * passwordContents.length)];
   }
