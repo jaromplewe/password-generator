@@ -4,8 +4,11 @@ var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
   // letters array
-  var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+  var lettersUC = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", ];
+  var lettersLC = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
+  // symbols array
+  var symbols = ["@", "%", "+", "\", "/", "", "!", "#", "$", "^", :?", ":", "-", "_", "."];
 
   // character length
   var characterLength = prompt('How many characters? (8-128)');
@@ -13,20 +16,22 @@ function generatePassword() {
 
   // upper and lower case letters?
   var caseYN = confirm('Would you like to include upper AND lower case letters?');
+  // return 'letters' according to answer
   if (caseYN) {
-    var lettersUC = letters;
+    var letters = [lettersUC + lettersLC];
     console.log(letters);
   } else {
-    for (var i = 0; i < letters.length; i++) {
-      letters = letters.map(letters[i]).toLowerCase();
-      console.log(letters);
-    }
-
+    var letters = lettersLC;
+    console.log(letters);
   }
 
   // symbols?
   var symbolYN = confirm("Would you like to include symbols? (@%+\/'!#$^?:,-_.)");
   console.log(symbolYN);
+  // return symbols if Y
+  if (symbolYN) {
+    
+  }
 
   // numbers?
   var numbersYN = confirm('Would you like to include numbers?');
