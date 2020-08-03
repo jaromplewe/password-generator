@@ -39,16 +39,16 @@ function generatePassword() {
   }
   console.log(passwordContents);
   
-
+var password;
   // CREATE THE PASSWORD
   for (let n = 0; n > characterLength; n++) {
     function randomItem() {
-      var passwordContents = passwordContents[Math.floor(Math.random() * passwordContents.length)];
+      var password += passwordContents[Math.floor(Math.random() * passwordContents.length)];
     }
     // var randomItem = passwordContents[Math.floor(Math.random() * passwordContents.length)];
   }
   
-  return (passwordContents);
+  return (password);
   
 }
 
