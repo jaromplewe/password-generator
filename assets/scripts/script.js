@@ -2,14 +2,14 @@
 let generateBtn = document.querySelector("#generate");
 
 // set arrays
-let lettersUC = ['ABCDEFGHIJKLMNOPQRSTUVWXYZ'];
-let lettersLC = ['abcdefghijklmnopqrstuvwxyz'];
-let symbols = ["@%+/'!#$^:?,-_."];
-let numbers = [0123456789];
+var lettersUC = ['ABCDEFGHIJKLMNOPQRSTUVWXYZ'];
+var lettersLC = ['abcdefghijklmnopqrstuvwxyz'];
+var symbols = ["@%+/'!#$^:?,-_."];
+var numbers = ['0123456789'];
 
 function generatePassword() {
   // set variables for function
-  let characterLength = prompt('How many characters? (8-128)');
+  var characterLength = prompt('How many characters? (8-128)');
   var passwordContents = "";
   var password = "";
 
@@ -34,12 +34,11 @@ function generatePassword() {
   // CREATE THE PASSWORD
   for (var n=0; n<characterLength; n++) {
       password += passwordContents[Math.floor(Math.random() * passwordContents.length)];
-  }
+    }
   
-  return (password);
-  
-}
+    return (password); 
 
+}
 
 // Write password to the #password input
 function writePassword() {
