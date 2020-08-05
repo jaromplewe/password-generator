@@ -1,13 +1,14 @@
 // Assignment Code
 let generateBtn = document.querySelector("#generate");
 
-// set arrays
-var lettersUC = ['ABCDEFGHIJKLMNOPQRSTUVWXYZ'];
-var lettersLC = ['abcdefghijklmnopqrstuvwxyz'];
-var symbols = ["@%+/'!#$^:?,-_."];
-var numbers = ['0123456789'];
 
 function generatePassword() {
+  // set arrays
+  var lettersUC = ['ABCDEFGHIJKLMNOPQRSTUVWXYZ'];
+  var lettersLC = ['abcdefghijklmnopqrstuvwxyz'];
+  var symbols = ["@%+/'!#$^:?,-_."];
+  var numbers = ['0123456789'];
+  
   // set variables for function
   var characterLength = prompt('How many characters? (8-128)');
   var passwordContents = "";
