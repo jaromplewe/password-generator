@@ -25,52 +25,32 @@ function generatePassword() {
 
   if (confirm('Would you like to include upper case letters?')) {
     passwordContents = passwordContents.concat(lettersUC);
+    // debugger;
+    password += lettersUC[0][Math.floor(Math.random() * lettersUC[0].length)];
   }
   
   if (confirm('Would you like to include lower case letters?')) {
     passwordContents = passwordContents.concat(lettersLC);
+    password += lettersLC[0][Math.floor(Math.random() * lettersLC[0].length)];
   }
   
   if (confirm("Would you like to include symbols? (@%+/'!#$^:?,-_.)")) {
     passwordContents = passwordContents.concat(symbols);
+    password += symbols[0][Math.floor(Math.random() * symbols[0].length)];
   }
   
   if (confirm('Would you like to include numbers?')) {
     passwordContents = passwordContents.concat(numbers);
+    password += numbers[0][Math.floor(Math.random() * numbers[0].length)];
   }
   
-  // create the password
-  for (var n = 0; n < characterLength; n++) {
+  // create the rest of the password
+  for (var n = password.length; n < characterLength; n++) {
     password += passwordContents[Math.floor(Math.random() * passwordContents.length)];
   }
-
-  // ensure all criteria are met
-  function passIncludesAll(arr1, arr2) {
   
-    for(var i = 0; i < arr1.length; i++) {
-      
-      for(var j = 0; j < arr2.length; j++) {
-
-        if(arr1[i].includes(arr2[j])) {
-          console.log("True");
-          return true;
-        }
-      }
-    }
-    // console.log('False');
-    console.log("False");
-    return false;
-  }
-
-  // finally, DISPLAY the password
-  console.log(password);
-  if(passIncludesAll(password.split(""), numbers)) {
-    return password
-  } else {
-    return "doesn't contain all criteria";
-  }
-
-
+  return password;
+  
 }
 
 // Write password to the #password input
