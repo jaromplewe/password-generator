@@ -18,7 +18,11 @@ function generatePassword() {
   var password = "";
   
   // collect criteria for password
-  
+  if (characterLength < 8 || characterLength > 128) {
+    alert("You must input a number between 8 and 128");
+    generatePassword();
+  }
+
   if (confirm('Would you like to include upper case letters?')) {
     passwordContents = passwordContents.concat(lettersUC);
   }
