@@ -3,7 +3,7 @@
 **Link: https://jaromplewe.github.io/password-generator/**
 
 ### Description
-Creating a strong password for business and personal accounts is a high importance. I have created a way to automatically create a secure password. 
+Creating a strong password for business and personal accounts is a high importance for security. I've created a way to simply and automatically create your secure password. 
 * Disclaimer: it is more important that your password has length than it matters which characters you use.
 
 ### Functionality
