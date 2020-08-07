@@ -1,31 +1,30 @@
 // Assignment Code
-let generateBtn = document.querySelector("#generate");
+var generateBtn = document.querySelector("#generate");
 
 
 function generatePassword() {
-  // set arrays
+  // Set arrays
   var lettersUC = ['ABCDEFGHIJKLMNOPQRSTUVWXYZ'];
-  // var UCSplit = lettersUC.split("");
-  // console.log(UCSplit);
   var lettersLC = ['abcdefghijklmnopqrstuvwxyz'];
   var symbols = ["@%+/'!#$^:?,-_."];
-  
-  let numbers = ['0123456789'];
+  var numbers = ['0123456789'];
 
-  // set variables for function
+  // Set variables for function
   var characterLength = prompt('How many characters? (8-128)');
   var passwordContents = "";
   var password = "";
   
-  // collect criteria for password
+  // Collect criteria for password
   if (characterLength < 8 || characterLength > 128) {
     alert("You must input a number between 8 and 128");
     generatePassword();
   }
 
+  // FOR EACH CRITERIA:
+  // Add each array to a collective passwordContents array for random character choice.
+  // When asking for info, begin creating password with one item from each array to guarantee each item is used at least once.
   if (confirm('Would you like to include upper case letters?')) {
     passwordContents = passwordContents.concat(lettersUC);
-    // debugger;
     password += lettersUC[0][Math.floor(Math.random() * lettersUC[0].length)];
   }
   
@@ -44,19 +43,19 @@ function generatePassword() {
     password += numbers[0][Math.floor(Math.random() * numbers[0].length)];
   }
   
-  // create the rest of the password
+  // Create the rest of the password randomly from the passwordContents array
   for (var n = password.length; n < characterLength; n++) {
     password += passwordContents[Math.floor(Math.random() * passwordContents.length)];
   }
-  
+
   return password;
   
 }
 
 // Write password to the #password input
 function writePassword() {
-  let password = generatePassword();
-  let passwordText = document.querySelector("#password");
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 
