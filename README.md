@@ -4,7 +4,7 @@
 
 ### Description
 Creating a strong password for business and personal accounts is a high importance for security. I've created a way to simply and automatically create your secure password. 
-* Disclaimer: it is more important that your password has length than it matters which characters you use.
+* Disclaimer: The security and difficulty of your password relies more heavily on the length than it does on the type of characters you use.
 
 ### Functionality
 ![password-generator-screenshot](./assets/screenshot/password-generator-screenshot.png)
